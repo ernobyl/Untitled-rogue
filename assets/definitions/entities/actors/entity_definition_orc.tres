@@ -1,0 +1,31 @@
+[gd_resource type="Resource" script_class="EntityDefinition" load_steps=7 format=3 uid="uid://bggk73woudcnw"]
+
+[ext_resource type="Script" path="res://src/Entities/Actors/Components/ComponentDefinitions/fighter_component_definition.gd" id="1_ixs8m"]
+[ext_resource type="Script" path="res://src/Entities/entity_definition.gd" id="1_tdf2x"]
+[ext_resource type="Texture2D" uid="uid://ylm2fe8memxl" path="res://assets/images/tiles_32x32/tilesheet_32x32.png" id="4_hldbl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_88rkr"]
+atlas = ExtResource("4_hldbl")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="Resource" id="Resource_5gy3q"]
+script = ExtResource("1_ixs8m")
+max_hp = 10
+power = 3
+defense = 0
+death_texture = SubResource("AtlasTexture_88rkr")
+death_color = Color(0.545098, 0, 0, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x0nh5"]
+atlas = ExtResource("4_hldbl")
+region = Rect2(64, 32, 32, 32)
+
+[resource]
+script = ExtResource("1_tdf2x")
+name = "Orc"
+texture = SubResource("AtlasTexture_x0nh5")
+color = Color(0.247059, 0.498039, 0.247059, 1)
+is_blocking_movement = true
+type = 2
+fighter_definition = SubResource("Resource_5gy3q")
+ai_type = 1

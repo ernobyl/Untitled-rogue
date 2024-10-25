@@ -1,0 +1,31 @@
+[gd_resource type="Resource" script_class="EntityDefinition" load_steps=7 format=3 uid="uid://nonyedj0ufmd"]
+
+[ext_resource type="Script" path="res://src/Entities/entity_definition.gd" id="1_jis8c"]
+[ext_resource type="Script" path="res://src/Entities/Actors/Components/ComponentDefinitions/fighter_component_definition.gd" id="1_tol5g"]
+[ext_resource type="Texture2D" uid="uid://ylm2fe8memxl" path="res://assets/images/tiles_32x32/tilesheet_32x32.png" id="4_m80o6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dc6q5"]
+atlas = ExtResource("4_m80o6")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="Resource" id="Resource_uw3og"]
+script = ExtResource("1_tol5g")
+max_hp = 30
+power = 5
+defense = 2
+death_texture = SubResource("AtlasTexture_dc6q5")
+death_color = Color(0.545098, 0, 0, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qvjg7"]
+atlas = ExtResource("4_m80o6")
+region = Rect2(64, 0, 32, 32)
+
+[resource]
+script = ExtResource("1_jis8c")
+name = "Player"
+texture = SubResource("AtlasTexture_qvjg7")
+color = Color(1, 1, 1, 1)
+is_blocking_movement = true
+type = 2
+fighter_definition = SubResource("Resource_uw3og")
+ai_type = 1
