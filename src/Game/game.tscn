@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://n87rw5cxnnn8"]
+[gd_scene load_steps=22 format=3 uid="uid://n87rw5cxnnn8"]
 
 [ext_resource type="Script" path="res://src/Game/game.gd" id="1_ne6pe"]
 [ext_resource type="Script" path="res://src/Game/EventHandlers/input_handler.gd" id="2_4winb"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://src/Game/EventHandlers/game_over_input_handler.gd" id="4_gxmdu"]
 [ext_resource type="Script" path="res://src/Map/field_of_view.gd" id="5_bvmgb"]
 [ext_resource type="Script" path="res://src/Game/EventHandlers/history_viewer_input_handler.gd" id="5_ry0fi"]
+[ext_resource type="Script" path="res://src/Game/EventHandlers/base_input_handler.gd" id="6_ea7ht"]
 [ext_resource type="Texture2D" uid="uid://h7i8uiwlysq2" path="res://assets/images/kenney_1-bit-pack/monochrome_packed.png" id="8_nsdwi"]
 [ext_resource type="Script" path="res://src/GUI/hp_display.gd" id="9_4mjhp"]
 [ext_resource type="Script" path="res://src/GUI/mouseover_checker.gd" id="9_aqxwq"]
@@ -99,6 +100,9 @@ script = ExtResource("4_gxmdu")
 script = ExtResource("5_ry0fi")
 messages_panel_path = NodePath("../../../../../InfoBar/MessagesPanel")
 message_log_path = NodePath("../../../../../InfoBar/MessagesPanel/MessageLog")
+
+[node name="DummyInputHandler" type="Node" parent="VBoxContainer/SubViewportContainer/SubViewport/Game/InputHandler"]
+script = ExtResource("6_ea7ht")
 
 [node name="Map" type="Node2D" parent="VBoxContainer/SubViewportContainer/SubViewport/Game"]
 script = ExtResource("3_xyl86")

@@ -1,0 +1,40 @@
+[gd_resource type="Resource" script_class="EntityDefinition" load_steps=8 format=3 uid="uid://k6wva8mad4qw"]
+
+[ext_resource type="Script" path="res://src/Entities/entity_definition.gd" id="1_rlwxs"]
+[ext_resource type="Script" path="res://src/Entities/Actors/Components/ComponentDefinitions/healing_consumable_component_definition.gd" id="1_s5cov"]
+[ext_resource type="Texture2D" uid="uid://31fe2y24ldbg" path="res://assets/images/tiles_16x16/tilesheet16x16.png" id="2_vn5al"]
+
+[sub_resource type="Resource" id="Resource_cxt41"]
+script = ExtResource("1_s5cov")
+healing_amount = 4
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7aexw"]
+atlas = ExtResource("2_vn5al")
+region = Rect2(112, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_aitcg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7aexw")
+}],
+"loop": false,
+"name": &"default",
+"speed": 1.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_60l5t"]
+atlas = ExtResource("2_vn5al")
+region = Rect2(112, 0, 16, 16)
+
+[resource]
+script = ExtResource("1_rlwxs")
+name = "Health Potion"
+texture = SubResource("AtlasTexture_60l5t")
+color = Color(1, 1, 1, 1)
+sprite_frames = SubResource("SpriteFrames_aitcg")
+is_blocking_movement = false
+type = 1
+ai_type = 0
+consumable_definition = SubResource("Resource_cxt41")
+inventory_capacity = 0

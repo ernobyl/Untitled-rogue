@@ -5,7 +5,8 @@ res://assets/resources/message_label_settings.tres
 res://assets/definitions/entities/actors/entity_definition_player.tres
 res://assets/definitions/entities/actors/entity_definition_orc.tres
 res://assets/definitions/entities/actors/entity_definition_troll.tres
+res://assets/definitions/entities/items/health_potion_definition.tres
 res://assets/tile_definitions/tile_wall.tres
 res://assets/tile_definitions/tile_floor.tres
-res://src/Map/tile_definition.gd
-res://src/Map/tile.gd
+res://src/GUI/InventoryMenu/inventory_menu.tscn
+res://src/GUI/InventoryMenu/inventory_menu_item.tscn
