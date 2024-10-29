@@ -1,16 +1,37 @@
-[gd_resource type="Resource" script_class="TileDefinition" load_steps=4 format=3 uid="uid://b78s0r6fi8jna"]
+[gd_resource type="Resource" script_class="TileDefinition" load_steps=9 format=3 uid="uid://b78s0r6fi8jna"]
 
 [ext_resource type="Script" path="res://src/Map/tile_definition.gd" id="1_2ub2n"]
-[ext_resource type="Texture2D" uid="uid://ylm2fe8memxl" path="res://assets/images/tiles_32x32/tilesheet_32x32.png" id="2_ucrtf"]
+[ext_resource type="Texture2D" uid="uid://31fe2y24ldbg" path="res://assets/images/tiles_16x16/tilesheet16x16.png" id="2_w6l26"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_q52n4"]
-atlas = ExtResource("2_ucrtf")
-region = Rect2(32, 0, 32, 32)
+atlas = ExtResource("2_w6l26")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cjp84"]
+atlas = ExtResource("2_w6l26")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ofm6m"]
+atlas = ExtResource("2_w6l26")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_84djt"]
+atlas = ExtResource("2_w6l26")
+region = Rect2(32, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_28iih"]
+atlas = ExtResource("2_w6l26")
+region = Rect2(48, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7pur8"]
+atlas = ExtResource("2_w6l26")
+region = Rect2(64, 16, 16, 16)
 
 [resource]
 script = ExtResource("1_2ub2n")
 texture = SubResource("AtlasTexture_q52n4")
-color_lit = Color(0.72, 0.72, 0.72, 1)
-color_dark = Color(0.43, 0.43, 0.43, 1)
+textures = Array[AtlasTexture]([SubResource("AtlasTexture_cjp84"), SubResource("AtlasTexture_ofm6m"), SubResource("AtlasTexture_84djt"), SubResource("AtlasTexture_28iih"), SubResource("AtlasTexture_7pur8")])
+color_lit = Color(0.95158, 0.95158, 0.95158, 1)
+color_dark = Color(0.385492, 0.385493, 0.385492, 1)
 is_walkable = false
 is_transparent = false

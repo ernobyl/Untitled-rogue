@@ -10,6 +10,7 @@ region = Rect2(160, 272, 16, 16)
 [resource]
 script = ExtResource("1_u0mev")
 texture = SubResource("AtlasTexture_61y2s")
+textures = Array[AtlasTexture]([])
 color_lit = Color(0.807843, 0.807843, 0.807843, 1)
 color_dark = Color(1, 1, 1, 1)
 is_walkable = false

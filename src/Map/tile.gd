@@ -26,7 +26,8 @@ func _init(grid_position: Vector2i, tile_definition: TileDefinition) -> void:
 
 func set_tile_type(tile_definition: TileDefinition) -> void:
 	_definition = tile_definition
-	texture = _definition.texture
+	#texture = _definition.texture
+	texture = _definition.textures[randi() % tile_definition.textures.size()]
 	modulate = _definition.color_dark
 
 
@@ -36,4 +37,3 @@ func is_walkable() -> bool:
 
 func is_transparent() -> bool:
 	return _definition.is_transparent
-

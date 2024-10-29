@@ -1,5 +1,6 @@
+res://assets/images/tiles_16x16
+res://assets/images/tiles_32x32
 res://assets/fonts/pixica_fonts
 res://assets/resources
 res://src/GUI
 res://src/Game/EventHandlers
-res://assets/images/tiles_32x32

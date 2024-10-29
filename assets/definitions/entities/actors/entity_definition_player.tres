@@ -1,8 +1,9 @@
-[gd_resource type="Resource" script_class="EntityDefinition" load_steps=7 format=3 uid="uid://nonyedj0ufmd"]
+[gd_resource type="Resource" script_class="EntityDefinition" load_steps=12 format=3 uid="uid://nonyedj0ufmd"]
 
 [ext_resource type="Script" path="res://src/Entities/entity_definition.gd" id="1_jis8c"]
 [ext_resource type="Script" path="res://src/Entities/Actors/Components/ComponentDefinitions/fighter_component_definition.gd" id="1_tol5g"]
 [ext_resource type="Texture2D" uid="uid://ylm2fe8memxl" path="res://assets/images/tiles_32x32/tilesheet_32x32.png" id="4_m80o6"]
+[ext_resource type="Texture2D" uid="uid://31fe2y24ldbg" path="res://assets/images/tiles_16x16/tilesheet16x16.png" id="4_mb3bm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dc6q5"]
 atlas = ExtResource("4_m80o6")
@@ -16,15 +17,48 @@ defense = 2
 death_texture = SubResource("AtlasTexture_dc6q5")
 death_color = Color(0.545098, 0, 0, 1)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_qvjg7"]
-atlas = ExtResource("4_m80o6")
-region = Rect2(64, 0, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_fcj4d"]
+atlas = ExtResource("4_mb3bm")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0nxle"]
+atlas = ExtResource("4_mb3bm")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1bvdb"]
+atlas = ExtResource("4_mb3bm")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tep7m"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fcj4d")
+}],
+"loop": false,
+"name": &"dead",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0nxle")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1bvdb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t2cps"]
 
 [resource]
 script = ExtResource("1_jis8c")
 name = "Player"
-texture = SubResource("AtlasTexture_qvjg7")
+texture = SubResource("AtlasTexture_t2cps")
 color = Color(1, 1, 1, 1)
+sprite_frames = SubResource("SpriteFrames_tep7m")
 is_blocking_movement = true
 type = 2
 fighter_definition = SubResource("Resource_uw3og")

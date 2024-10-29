@@ -28,3 +28,4 @@ func transition_to(input_handler: InputHandlers) -> void:
 		current_input_handler.exit()
 	current_input_handler = input_handler_nodes[input_handler]
 	current_input_handler.enter()
+	

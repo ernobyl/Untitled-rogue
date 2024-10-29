@@ -1,6 +1,7 @@
 class_name Entity
-extends Sprite2D
+extends AnimatedSprite2D
 
+@export var entity_definition_player: Resource
 enum AIType {NONE, HOSTILE}
 enum EntityType {CORPSE, ITEM, ACTOR}
 
@@ -34,8 +35,11 @@ func set_entity_type(entity_definition: EntityDefinition) -> void:
 	type = _definition.type
 	blocks_movement = _definition.is_blocking_movement
 	entity_name = _definition.name
-	texture = entity_definition.texture
+	sprite_frames = entity_definition.sprite_frames
+	play("default")
+	#texture = entity_definition.texture
 	modulate = entity_definition.color
+	
 	
 	match entity_definition.ai_type:
 		AIType.HOSTILE:

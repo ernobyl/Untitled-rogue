@@ -1,8 +1,9 @@
-[gd_resource type="Resource" script_class="EntityDefinition" load_steps=7 format=3 uid="uid://bggk73woudcnw"]
+[gd_resource type="Resource" script_class="EntityDefinition" load_steps=12 format=3 uid="uid://bggk73woudcnw"]
 
 [ext_resource type="Script" path="res://src/Entities/Actors/Components/ComponentDefinitions/fighter_component_definition.gd" id="1_ixs8m"]
 [ext_resource type="Script" path="res://src/Entities/entity_definition.gd" id="1_tdf2x"]
 [ext_resource type="Texture2D" uid="uid://ylm2fe8memxl" path="res://assets/images/tiles_32x32/tilesheet_32x32.png" id="4_hldbl"]
+[ext_resource type="Texture2D" uid="uid://31fe2y24ldbg" path="res://assets/images/tiles_16x16/tilesheet16x16.png" id="4_ludxd"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_88rkr"]
 atlas = ExtResource("4_hldbl")
@@ -16,6 +17,40 @@ defense = 0
 death_texture = SubResource("AtlasTexture_88rkr")
 death_color = Color(0.545098, 0, 0, 1)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_b4tmq"]
+atlas = ExtResource("4_ludxd")
+region = Rect2(32, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a22p6"]
+atlas = ExtResource("4_ludxd")
+region = Rect2(0, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ln5my"]
+atlas = ExtResource("4_ludxd")
+region = Rect2(16, 32, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_16ci8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b4tmq")
+}],
+"loop": true,
+"name": &"dead",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a22p6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ln5my")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_x0nh5"]
 atlas = ExtResource("4_hldbl")
 region = Rect2(64, 32, 32, 32)
@@ -24,7 +59,8 @@ region = Rect2(64, 32, 32, 32)
 script = ExtResource("1_tdf2x")
 name = "Orc"
 texture = SubResource("AtlasTexture_x0nh5")
-color = Color(0.247059, 0.498039, 0.247059, 1)
+color = Color(1, 1, 1, 1)
+sprite_frames = SubResource("SpriteFrames_16ci8")
 is_blocking_movement = true
 type = 2
 fighter_definition = SubResource("Resource_5gy3q")

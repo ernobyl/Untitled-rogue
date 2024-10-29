@@ -22,8 +22,8 @@ func _init(definition: FighterComponentDefinition) -> void:
 	hp = definition.max_hp
 	defense = definition.defense
 	power = definition.power
-	death_texture = definition.death_texture
-	death_color = definition.death_color
+	#death_texture = definition.death_texture
+	#death_color = definition.death_color
 
 
 func die() -> void:
@@ -41,8 +41,9 @@ func die() -> void:
 	MessageLog.send_message(death_message, death_message_color)
 	
 	print(death_message)
-	entity.texture = death_texture
-	entity.modulate = death_color
+	#entity.texture = death_texture
+	#entity.modulate = death_color
+	entity.play("dead")
 	entity.ai_component.queue_free()
 	entity.ai_component = null
 	entity.entity_name = "Remains of %s" % entity.entity_name

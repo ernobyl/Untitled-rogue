@@ -5,6 +5,7 @@ extends Resource
 @export var name: String = "Unnamed Entity"
 @export var texture: AtlasTexture
 @export_color_no_alpha var color: Color = Color.WHITE
+@export var sprite_frames: SpriteFrames  # This will hold the animations
 
 @export_category("Mechanics")
 @export var is_blocking_movement: bool = true

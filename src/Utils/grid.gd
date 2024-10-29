@@ -1,7 +1,7 @@
 class_name Grid
 extends Object
 
-const tile_size = Vector2i(32, 32)
+const tile_size = Vector2i(16, 16)
 
 
 static  func grid_to_world(grid_pos: Vector2i) -> Vector2i:
