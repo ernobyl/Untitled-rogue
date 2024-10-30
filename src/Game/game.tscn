@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://n87rw5cxnnn8"]
+[gd_scene load_steps=23 format=3 uid="uid://n87rw5cxnnn8"]
 
 [ext_resource type="Script" path="res://src/Game/game.gd" id="1_ne6pe"]
 [ext_resource type="Script" path="res://src/Game/EventHandlers/input_handler.gd" id="2_4winb"]
@@ -14,6 +14,7 @@
 [ext_resource type="Script" path="res://src/GUI/mouseover_checker.gd" id="9_aqxwq"]
 [ext_resource type="FontFile" uid="uid://d3kxcpjtdldgt" path="res://assets/fonts/pixica_fonts/PixicaMono-Bold.ttf" id="9_jt4rf"]
 [ext_resource type="Script" path="res://src/GUI/message_log.gd" id="11_14yww"]
+[ext_resource type="PackedScene" uid="uid://bf5jfy1wktrcq" path="res://src/GUI/Reticle/reticle.tscn" id="11_ah383"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_41mtx"]
 atlas = ExtResource("8_nsdwi")
@@ -90,8 +91,9 @@ script = ExtResource("1_ne6pe")
 [node name="InputHandler" type="Node" parent="VBoxContainer/SubViewportContainer/SubViewport/Game"]
 script = ExtResource("2_4winb")
 
-[node name="MainGameInputHandler" type="Node" parent="VBoxContainer/SubViewportContainer/SubViewport/Game/InputHandler"]
+[node name="MainGameInputHandler" type="Node" parent="VBoxContainer/SubViewportContainer/SubViewport/Game/InputHandler" node_paths=PackedStringArray("reticle")]
 script = ExtResource("3_08i3b")
+reticle = NodePath("../../Map/Reticle")
 
 [node name="GameOverInputHandler" type="Node" parent="VBoxContainer/SubViewportContainer/SubViewport/Game/InputHandler"]
 script = ExtResource("4_gxmdu")
@@ -120,8 +122,10 @@ script = ExtResource("5_bvmgb")
 [node name="MouseoverChecker" type="Node2D" parent="VBoxContainer/SubViewportContainer/SubViewport/Game/Map"]
 script = ExtResource("9_aqxwq")
 
+[node name="Reticle" parent="VBoxContainer/SubViewportContainer/SubViewport/Game/Map" instance=ExtResource("11_ah383")]
+
 [node name="Camera2D" type="Camera2D" parent="VBoxContainer/SubViewportContainer/SubViewport/Game"]
-zoom = Vector2(2, 2)
+zoom = Vector2(1.75, 1.75)
 
 [node name="InfoBar" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2

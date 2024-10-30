@@ -1,0 +1,43 @@
+[gd_resource type="Resource" script_class="EntityDefinition" load_steps=8 format=3 uid="uid://bw5ef08ytexdh"]
+
+[ext_resource type="Script" path="res://src/Entities/Actors/Components/ComponentDefinitions/lightning_damage_consumable_component_definition.gd" id="1_f05dt"]
+[ext_resource type="Script" path="res://src/Entities/entity_definition.gd" id="1_qfuhr"]
+[ext_resource type="Texture2D" uid="uid://31fe2y24ldbg" path="res://assets/images/tiles_16x16/tilesheet16x16.png" id="2_hdvbv"]
+
+[sub_resource type="Resource" id="Resource_tglch"]
+script = ExtResource("1_f05dt")
+damage = 20
+maximum_range = 5
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c7jfr"]
+atlas = ExtResource("2_hdvbv")
+region = Rect2(128, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jei5e"]
+atlas = ExtResource("2_hdvbv")
+region = Rect2(144, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_iiklw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c7jfr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jei5e")
+}],
+"loop": false,
+"name": &"default",
+"speed": 2.0
+}]
+
+[resource]
+script = ExtResource("1_qfuhr")
+name = "Lightning Scroll"
+color = Color(0.944183, 0.806412, 0.743489, 1)
+sprite_frames = SubResource("SpriteFrames_iiklw")
+is_blocking_movement = false
+type = 1
+ai_type = 0
+consumable_definition = SubResource("Resource_tglch")
+inventory_capacity = 0
