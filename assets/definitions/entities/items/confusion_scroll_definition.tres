@@ -1,0 +1,42 @@
+[gd_resource type="Resource" script_class="EntityDefinition" load_steps=8 format=3 uid="uid://d4hgse8otoha3"]
+
+[ext_resource type="Script" path="res://src/Entities/Actors/Components/ComponentDefinitions/confusion_consumable_component_definition.gd" id="1_58cvi"]
+[ext_resource type="Script" path="res://src/Entities/entity_definition.gd" id="1_k2uxv"]
+[ext_resource type="Texture2D" uid="uid://31fe2y24ldbg" path="res://assets/images/tiles_16x16/tilesheet16x16.png" id="3_0jwrv"]
+
+[sub_resource type="Resource" id="Resource_bujfh"]
+script = ExtResource("1_58cvi")
+number_of_turns = 10
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dn0yo"]
+atlas = ExtResource("3_0jwrv")
+region = Rect2(128, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_trddh"]
+atlas = ExtResource("3_0jwrv")
+region = Rect2(144, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3jg72"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dn0yo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_trddh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[resource]
+script = ExtResource("1_k2uxv")
+name = "Confusion Scroll"
+color = Color(0.585108, 0.354374, 1, 1)
+sprite_frames = SubResource("SpriteFrames_3jg72")
+is_blocking_movement = false
+type = 1
+ai_type = 0
+consumable_definition = SubResource("Resource_bujfh")
+inventory_capacity = 0

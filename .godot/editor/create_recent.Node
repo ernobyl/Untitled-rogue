@@ -1,3 +1,4 @@
+Line2D
 Camera2D
 AnimationPlayer
 Polygon2D
@@ -12,4 +13,3 @@ PanelContainer
 CenterContainer
 CanvasLayer
 AnimatedSprite2D
-ScrollContainer

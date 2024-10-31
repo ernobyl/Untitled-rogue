@@ -17,7 +17,7 @@ func generate(player: Entity) -> void:
 
 
 func update_fov(player_position: Vector2i) -> void:
-	field_of_view.update_fov(map_data, player_position, 10)
+	field_of_view.update_fov(map_data, player_position, 12)
 	
 	for entity in map_data.entities:
 		entity.visible = map_data.get_tile(entity.grid_position).is_in_view

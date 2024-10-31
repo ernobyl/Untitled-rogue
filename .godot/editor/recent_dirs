@@ -1,6 +1,6 @@
-res://src/GUI/Reticle
 res://assets/images/tiles_16x16
 res://assets/definitions/entities/items
+res://src/GUI/Reticle
 res://assets/fonts/pixica_fonts
 res://src/GUI/InventoryMenu
 res://assets/images/tiles_32x32
